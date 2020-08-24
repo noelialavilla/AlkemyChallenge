@@ -1,0 +1,54 @@
+<p>
+    <mat-toolbar color="primary" class="myToolbar">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Alkemy FunStore</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>
+
+<body>
+    <!-- <h1>{{title}}</h1> -->
+
+    <form class="example-form">
+
+        <table class="example-full-width" cellspacing="0">
+            <h2>Iniciar Sesión</h2>
+
+            <div class="example-container">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Ingrese su cuenta de correo</mat-label>
+                    <input matInput placeholder="juan@ejemplo.com" [formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="example-container">
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-label>Ingrese contraseña</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+
+                </mat-form-field>
+
+            </div>
+            <section>
+
+                <button mat-raised-button color="primary" (click)="goToPage('public/register')">Registrarse</button>
+                <span class="example-spacer"></span>
+                <button mat-raised-button color="primary" class="siguiente-button">Siguiente</button>
+
+            </section>
+        </table>
+
+    </form>
+</body>
